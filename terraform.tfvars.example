@@ -1,0 +1,16 @@
+# Copy this file to terraform.tfvars and fill in your values.
+# Never commit terraform.tfvars to source control.
+
+aws_region  = "us-east-1"
+bucket_name = "my-app-bucket-unique-name"
+
+vault_addr  = "https://vault.example.com:8200"
+vault_token = "hvs.XXXXXXXXXXXXXXXXXXXXXXXX"  # use a short-lived token in CI/CD
+
+vault_aws_role_name           = "s3-dynamic-role"
+vault_policy_name             = "s3-secrets-policy"
+vault_identity_token_audience = "aws"
+vault_identity_token_ttl      = 3600
+
+credential_ttl     = "1h"
+credential_max_ttl = "24h"
